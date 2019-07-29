@@ -9,7 +9,7 @@ const forecast = (long, lat, callback) => {
         } else if(body.error){
             callback('No se encontró el lugar')
         }else{
-        callback(undefined, body.daily.data[0].summary + ' La temperatura es ' + body.currently.temperature + ' grados afuera. Hay una probabilidad de ' + body.currently.precipProbability + '% de lluvia.')
+        callback(undefined, body.daily.data[0].summary + ' La temperatura es de ' + body.currently.temperature + '°C afuera. \r\n La temperatura mínima es de ' + body.daily.data[0].temperatureLow + '°C. \r\n La temperatura máxima es de ' + body.daily.data[0].temperatureHigh + '°C.  Hay una probabilidad de ' + body.currently.precipProbability + '% de lluvia.')
         }
     })
 }
