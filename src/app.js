@@ -21,7 +21,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath))
 
 app.get('', (req,res) => {
-    res.render('index', {
+    res.render('', {
         title: 'App de clima',
         name: 'Abraham Rojo'
     })
@@ -100,6 +100,14 @@ app.get('/products', (req, res) => {
     res.send({
         products: []
     })
+})
+
+app.get('/thanos', (req, res) => {
+    res.render('thanos',{
+        message: 'Sobreviviste a Thanos? Averigualo',
+        title: 'Sobreviviste a Thanos?',
+        name: "Lucas y Abraham"
+    } )
 })
 
 app.get('/help/*', (req, res) => {
